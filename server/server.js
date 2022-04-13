@@ -25,7 +25,7 @@ startServer()
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-// Serve up static assets
+// Serve up static assets - checks if node envronment is in production, if yes, serve any files in application's build directory
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
 }
